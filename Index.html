@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+	    <title>PhoneBook</title>
+		
+		<link rel="stylesheet" type="text/css" href="styles/styles-main.css">
+		<link rel="stylesheet" type="text/css" href="styles/styles-post.css">
+		
+		<script src="scripts/jquery-3.0.0.min.js"></script>
+		<script src="scripts/scripts-design.js"></script>
+		<script src="scripts/scripts-ajax.js"></script>
+		
+		<meta name="author" content="Генко Карадимов">
+		<meta charset="utf8"/>
+    </head>
+
+	<body>
+	
+        <aside class="sidebar" id="sidebar">
+		<a href="#" class="single-menu-element-link" id="asideBarPersonalSettingsLink" onclick="showOnlyPersonalSettings();"><li id="liForUserName" class="single-menu-element"></li></a>
+        <div class="logo"><img src="images/logo_sidebar.png" alt="logo"></div>
+        <hr><nav>
+            <ul>
+                <a href="#" class="single-menu-element-link" id="asideBarHomeLink" onclick="showOnlyHome();"><li class="single-menu-element">Home</li></a>
+                <a href="#" class="single-menu-element-link" id="asideBarLoginLink" onclick="showOnlyLogin()"><li class="single-menu-element">Login</li></a>
+                <a href="#" class="single-menu-element-link" id="asideBarRegisterLink" onclick="showOnlyRegister()"><li class="single-menu-element">Register</li></a>
+                <a href="#" class="single-menu-element-link" id="asideBarPeopleLink" onclick="showOnlyPeople()"><li class="single-menu-element">People</li></a>
+                <a href="#" class="single-menu-element-link" id="asideBarAddPersonLink" onclick="showOnlyAddPerson()"><li class="single-menu-element">Add Person</li></a>
+                <a href="#" class="single-menu-element-link" id="asideBarLogoutLink" onclick="logout()"><li class="single-menu-element">Logout</li></a>
+			</ul><hr></nav>
+		</aside>
+        
+        <div id="rightSide">
+            <div id="divPopup" class="divPopup" onclick="hideDivPopup()">
+			    <h2 id="divPopupText"></h2>
+            </div>
+
+            <div id="divHome">
+			    <h1 id="divHomeTitle">PhoneBook Karadimov Project 0.1v</h1><br><br>
+				<p class="divHomeText">PhoneBook Karadimov Project 0.1v разполага с логин система, персонални настройки на всеки акаунт, лесна редакция (добавяне, изтриване) на записи.</p><br>
+                <p class="divHomeText">Може да се ползва от всяко устроиство. Данните се пазят в кодирана формат в сървърите на <a href="https://www.kinvey.com/" class="homeLinks">Kinvey</a>. Можете да изтриете Вашия акаунт по всяко времe.</p><br>
+                <p class="divHomeText">В следващата версия 0.2v очаквайте: възможности за търсене и сортиране на контактите, логин и регистрация чрез FACEBOOK, GOOGLE, TWITTER. Импотиране на контакти от GOOGLE и APPLE акаунти.</p><br>
+			    <p class="divHomeText"><a href="https://www.facebook.com/profile.php?id=100000619802080" class="homeLinks">Тук</a> можете да се свържете да се свържете с мен. Съществуват верификация на логина и паролата!</p>
+			</div>
+
+            <div id="divRegister">
+			    <h1 id="registerTitle">Register</h1>
+                <form id="formRegister">    
+                	<input type="email" id="inputEmailRegister" class="form-input" placeholder="Email address">
+                	<input type="name" id="inputNameRegister" class="form-input" placeholder="Your Name">
+                	<input type="password" id="inputPasswordRegister" class="form-input" placeholder="Password">
+                	<input type="password" id="inputRePasswordRegister" class="form-input" placeholder="Password Again">
+                	<input type="submit" value="Create Account" class="form-button" onclick="register()">	
+                </form>
+            </div>			
+          
+            <div id="divLogin">
+			    <h1 id="loginTitle">Login</h1>
+                <form id="formLogin">    
+                	<input type="email" id="inputEmailLogin" class="form-input" placeholder="Email address">
+                	<input type="password" id="inputPasswordLogin" class="form-input" placeholder="Password">
+                	<input type="submit" value="Login" class="form-button" onclick="login()">
+                </form>
+            </div>	
+
+			<div id="divConfirm">
+			    <h1 id="divConfirmTitle">Confirm</h1>
+                <form id="formDivConfirm">    
+                	<input type="email" id="inputEmailConfirm" class="form-input" placeholder="Email address">
+                	<input type="password" id="inputPasswordConfirm" class="form-input" placeholder="Password">
+                	<input type="password" id="inputRePasswordConfirm" class="form-input" placeholder="Password Again">
+                	<input type="submit" value="Confirm" class="form-button" id="confirmButton">
+                </form>
+            </div>
+			
+            <div id="divAddPerson">
+			    <h1 id="AddPersonTitle">Add New Person</h1>
+                <form id="formAddPerson">    
+                	<input type="text" id="inputFullNameAddPerson" class="form-input" placeholder="Full-Name:">
+                	<input type="text" id="inputPhoneNumberAddPerson" class="form-input" placeholder="PhoneNumber:">
+                	<textarea type="text" id="inputDescriptionAddPerson" class="form-input" placeholder="Description:"></textarea>
+					<input type="submit" value="Add Person" class="form-button" onclick="createNewPerson()">	
+                </form>
+            </div>
+            
+			<div id="editPeople">
+			<h1 id="AddPersonTitle">Edit Information</h1>
+                <form id="formEditPerson">    
+                	<input type="text" id="inputFullNameEditPerson" class="form-input" placeholder="Full-Name:">
+                	<input type="number" id="inputPhoneNumberEditPerson" class="form-input" placeholder="PhoneNumber:">
+                	<textarea type="text" id="inputDescriptionEditPerson" class="form-input" placeholder="Description:"></textarea>
+					<input type="submit" value="Edit Person" class="form-button" onclick="editReady()">	
+                </form>
+			</div>
+			
+            <div id="divPeople">
+            </div>
+			
+			<div id="divPersonalSetting">
+			<h1 id="PersonalSettingsTitle">Personal Settings</h1><br>
+			<p class="divHomeText">От тук можете да коригирате настройките на вашият акаунт!</p><br>
+			<p class="divHomeText"><a href="#" onclick="deleteAccount()" class="homeLinks">Изтриване на акаунта</a></p>
+            </div>
+					
+        </div>
+    </body>
+</html>
