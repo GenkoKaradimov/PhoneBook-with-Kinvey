@@ -1,0 +1,159 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.divPopup, #divLogin, #divRegister, #divAddPerson, #divPeople, #asideBarPersonalSettingsLink, 
+#divPersonalSetting, #editPeople, #divHome, #divConfirm {
+	display: none;
+}
+
+aside {
+	list-style-type: none;
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: #06C0AB;
+    color: white;
+    font: 32px Lato;
+    font-weight: 100;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+
+}
+
+.single-menu-element-link {
+    text-decoration: none;
+    color: white;
+    -moz-transition-property: font-weight;
+    -moz-transition-duration: 3s;
+    -moz-transition-timing-function: linear;
+    -moz-transition-delay: 2.5s;
+    -webkit-transition-property: font-weight;
+    -webkit-transition-duration: 3s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 2.5s;
+    font-weight: 300;
+}
+
+.single-menu-element-link:hover {
+    font-weight: 900;
+    transition: background 0.7s ease,
+    padding 0.5s linear;
+}
+
+.single-menu-element:hover {
+    font-weight: 900;
+    background-color: #019c8c;
+    height: 40px;
+    line-height: 32px;
+    transition: background 0.7s ease, padding 0.5s linear;
+}
+
+.single-menu-element {
+    padding: 10px;
+}
+
+.logo {
+    padding-top: 15px;
+    padding-bottom: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#rightSide {
+	float: right;
+	width: 80%;
+}
+
+.divPopup {
+	size: 15px;
+	text-align:center;
+	background: yellow;
+	color: white;
+	margin-bottom: 20px;
+}
+
+
+#divHome, #editPeople, #divPersonalSetting, #divConfirm {
+	text-align: center;
+	background-color: #06C0AB;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-radius: 50px;
+	padding: 8px;
+}
+
+.divHomeText {
+	decoration: none;
+	font-size: 1.8em;
+}
+
+#divHomeTitle, #PersonalSettingsTitle {
+	font-size: 3em;
+}
+
+.homeLinks {
+	text-decoration: none;
+	/* TODO da smenq cveta*/
+}
+
+#divRegister, #divLogin, #divAddPerson {
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+	background-color: #06C0AB;
+	color: white;
+	width: 50%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 40px;
+}
+
+.form-input {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+  height: 38px;
+  margin-top: 5px;
+  font-weight: 500px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.form-input:focus {
+  border-color: #1e9ce6;
+  outline: 0;
+}
+
+.form-button {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+  height: 42px;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  background: #048677;
+  border-color: #d8d8d8 #d1d1d1 #c3c3c3;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#registerTitle, #loginTitle, #AddPersonTitle, #divConfirmTitle {
+	font-size: 3em;
+}
+ 
+
+ 
+ 

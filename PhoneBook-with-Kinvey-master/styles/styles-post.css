@@ -1,0 +1,39 @@
+.NoPhones {
+	font-size: 3em;
+	text-align: center;
+	background-color: #06C0AB;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-radius: 50px;
+	padding: 8px;
+}
+
+.PhoneBox {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #06C0AB;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-radius: 0;
+	padding: 8px;
+}
+
+#divPeople {
+	padding-bottom: 30px;
+}
+
+.contactLink {
+	color: blue;
+	font-size: 0.7em;
+	text-decoration:none;
+}
+
+
+
+
+
+
